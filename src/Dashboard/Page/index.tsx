@@ -67,6 +67,7 @@ function DashBoard() {
                     setIsAdding={setIsAdding}
                 />
                 <br/>
+                {/* Search Bar */}
                 <p>
                     <input
                     type="text"
