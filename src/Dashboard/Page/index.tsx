@@ -12,6 +12,7 @@ function DashBoard() {
     const [isAdding, setIsAdding] = useState(false); // So that when useState = true, only then pop-up for Adding or Editing will appear
     const [isEditing, setIsEditing] = useState(false);
     const [selectedEmployee, setSelectedEmployee] = useState(null); // will contain data of the particular employee that we select (say for updation/deletion), by default null
+    const [query, setQuery] = useState("");
 
     const handleEdit = (id) => {
         const [employee] = employees.filter(employee => employee.id === id); 
@@ -43,6 +44,20 @@ function DashBoard() {
         });
     }
 
+
+    /* some keyword can also be used if you wanna do advanced searching using all the fields
+     ---> didn't use because didn't understand its usage */
+    const search = (employees) => {
+        return employees.filter(
+            (employee) => employee.firstName.toLowerCase().includes(query) || 
+            employee.firstName.includes(query) || 
+            employee.lastName.toLowerCase().includes(query) || 
+            employee.lastName.includes(query) || 
+            employee.email.includes(query)
+            );
+
+    };
+
   return (
     <div className = 'container'>
         {!isAdding && !isEditing && (  /* When we aren't doing any editing or adding but simply viewing */
@@ -51,8 +66,17 @@ function DashBoard() {
                 <Header
                     setIsAdding={setIsAdding}
                 />
+                <br/>
+                <p>
+                    <input
+                    type="text"
+                    placeholder="Search..."
+                    className="search"
+                    onChange={(e) => setQuery(e.target.value)}
+                    />
+                </p>
                 <List 
-                    employees={employees}
+                    employees={search(employees)}
                     handleEdit={handleEdit} // We are creating buttons for each list item, to allow for edit and delete, the handle functions are responsive to the click and then pass the responsibility of editing & deleting to parent function 
                     handleDelete={handleDelete}
                 />
@@ -80,4 +104,3 @@ function DashBoard() {
 }
 
 export default DashBoard
-
