@@ -1,7 +1,7 @@
 import React, { useState } from "react"; // useState hook
 import { TextField } from "@mui/material";
 import { useFormik } from "formik"; // useFormik hook
-import * as Yup from "yup"; // Import everyhing from yup
+import * as Yup from "yup"; // Import everything from yup
 import App from "./Dashboard/App";
 
 const SignIn = () => {
@@ -16,11 +16,11 @@ const SignIn = () => {
       email: Yup.string()
         .email("Invalid email address")
         .required("Email address is required"),
-      password: Yup.string().min(6).max(60).required("Password is required"),
+      password: Yup.string().min(6,"Minimum 6 characters required").max(60, "Maximum 60 characters allowed").required("Password is required"),
     }),
 
     onSubmit: (values) => {
-      console.log(values);
+      //console.log(values);
       setIsSubmitSuccess(true)
     },
   });
@@ -28,7 +28,7 @@ const SignIn = () => {
   return (
     <div className="container">
       <div className = " ">
-        {isSubmitSuccess ? (
+        {isSubmitSuccess ? ( // if submit is success display App
           <App />
         ) : (
           <form onSubmit={formik.handleSubmit}>
@@ -37,14 +37,14 @@ const SignIn = () => {
               name="email"
               type="text"
               placeholder="Email"
-              onChange={formik.handleChange}
+              onChange={formik.handleChange} // handleChange allows for real time updation of form values as the user types
               value={formik.values.email}
             />
 
             <br></br>
             <h1> </h1>
 
-            {formik.touched.email && formik.errors.email ? (
+            {formik.touched.email && formik.errors.email ? ( // if invalid email adress or email box clicked on but not entered before submit button, display error msg
               <div className="error_msg">{formik.errors.email}</div>
             ) : null}
 
@@ -56,14 +56,14 @@ const SignIn = () => {
               onChange={formik.handleChange}
               value={formik.values.password}
             />
-            {formik.touched.password && formik.errors.password ? (
+            {formik.touched.password && formik.errors.password ? ( // if invalid pwd or pwd box clicked on but not entered before submit button, display error msg
               <div className="error_msg">{formik.errors.password}</div>
             ) : null}
             
             <br></br>
             <h1> </h1>
 
-            <button type="submit">Login</button>
+            <button type="submit">Login</button> {/* submit button */}
 
             <h1> </h1>
 
