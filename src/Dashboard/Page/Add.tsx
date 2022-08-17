@@ -9,7 +9,7 @@ function Add({employees, setEmployees, setIsAdding}) {
     const [date, setDate] = useState('');
 
     const handleAdd = e => { // handleAdd is defined as function passed with parameter e (event).
-        e.preventDefault(); //Prevents add employee form from being submitted in its default form
+        e.preventDefault(); // Basically tells the system to not allow the event to move forward in its default state
         if (!firstName || !lastName || !email || !salary || !date) { // Incomplete addition form
             return Swal.fire({
                 icon: 'error',
