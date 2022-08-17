@@ -20,7 +20,6 @@ const SignIn = () => {
     }),
 
     onSubmit: (values) => {
-      //console.log(values);
       setIsSubmitSuccess(true)
     },
   });
