@@ -50,7 +50,6 @@ function Add({employees, setEmployees, setIsAdding}) {
                 <input
                     id="firstName"
                     type="text"
-                    //ref={textInput}
                     name="firstName"
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)} // We are changing this (value - firstName) in the target element (firstName textbox)
