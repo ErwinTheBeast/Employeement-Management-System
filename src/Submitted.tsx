@@ -3,7 +3,6 @@
 import React from 'react'
 
 const Submitted = () => {
-    /* CSS style formatting */
     return (
             <div>
             <h3> Logged In </h3>
