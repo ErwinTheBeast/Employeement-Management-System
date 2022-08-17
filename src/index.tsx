@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 import SignIn from './Form';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SignIn />
-  </React.StrictMode>,
+    <SignIn />,
   document.querySelector('#root')
 );
 
