@@ -4,7 +4,7 @@ import * as Yup from "yup"; // Import everything from yup
 import App from "./Dashboard/App";
 
 const SignIn = () => {
-  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false); // Default value of isSubmitSuccess = false
+  const [isSubmitSuccess, setIsSubmitSuccess] = useState(false);
 
   const formik = useFormik({
     initialValues: {
