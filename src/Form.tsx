@@ -1,5 +1,4 @@
 import React, { useState } from "react"; // useState hook
-import { TextField } from "@mui/material";
 import { useFormik } from "formik"; // useFormik hook
 import * as Yup from "yup"; // Import everything from yup
 import App from "./Dashboard/App";
@@ -32,7 +31,7 @@ const SignIn = () => {
         ) : (
           <form onSubmit={formik.handleSubmit}>
             <h2>Login</h2>
-            <TextField
+            <input
               name="email"
               type="text"
               placeholder="Email"
@@ -47,11 +46,10 @@ const SignIn = () => {
               <div className="error_msg">{formik.errors.email}</div>
             ) : null}
 
-            <TextField
+            <input
               name="password"
-              type="password"
+              type="password" // so that typed-in text is not visible
               placeholder="Password"
-              className="textField"
               onChange={formik.handleChange}
               value={formik.values.password}
             />
