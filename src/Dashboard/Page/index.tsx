@@ -8,10 +8,10 @@ import Add from './Add';
 import {employeesData } from '../data';
 function DashBoard() {
 
-    const [employees, setEmployees] = useState(employeesData); // We should be able to see the addition/updation being done to the employeelist everytime we get back to the list page
-    const [isAdding, setIsAdding] = useState(false); // So that when useState = true, only then pop-up for Adding or Editing will appear
+    const [employees, setEmployees] = useState(employeesData);
+    const [isAdding, setIsAdding] = useState(false); // So that when true, only then view for Adding or Editing will appear
     const [isEditing, setIsEditing] = useState(false);
-    const [selectedEmployee, setSelectedEmployee] = useState(null); // will contain data of the particular employee that we select (say for updation/deletion), by default null
+    const [selectedEmployee, setSelectedEmployee] = useState(null); // By default we don't have any selected employee
     const [query, setQuery] = useState("");
 
     const handleEdit = (id) => {
