@@ -54,7 +54,7 @@ function Add({employees, setEmployees, setIsAdding}) {
                     value={firstName}
                     onChange={e => setFirstName(e.target.value)} // We are changing this (value - firstName) in the target element (firstName textbox)
                 />
-                <label htmlFor="lastName">Last Name</label>
+                <label>Last Name</label>
                 <input
                     id="lastName"
                     type="text"
@@ -62,7 +62,7 @@ function Add({employees, setEmployees, setIsAdding}) {
                     value={lastName}
                     onChange={e => setLastName(e.target.value)}
                 />
-                <label htmlFor="email">Email</label>
+                <label>Email</label>
                 <input
                     id="email"
                     type="email"
@@ -70,7 +70,7 @@ function Add({employees, setEmployees, setIsAdding}) {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                 />
-                <label htmlFor="salary">Salary ($)</label>
+                <label>Salary ($)</label>
                 <input
                     id="salary"
                     type="number"
@@ -78,7 +78,7 @@ function Add({employees, setEmployees, setIsAdding}) {
                     value={salary}
                     onChange={e => setSalary(e.target.value)}
                 />
-                <label htmlFor="date">Date</label>
+                <label>Date</label>
                 <input
                     id="date"
                     type="date"
