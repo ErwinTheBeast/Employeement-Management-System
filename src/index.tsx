@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-//import './index.css';
-import SignIn from './Form';
+import ReactDOM from 'react-dom/client';
+import App from './App'
+import "./index.css"
 
-ReactDOM.render(
-    <SignIn />,
-  document.querySelector('#root')
-);
+const el = document.getElementById('root')!;
+const root = ReactDOM.createRoot(el);
+
+
+root.render(<App />)
 
