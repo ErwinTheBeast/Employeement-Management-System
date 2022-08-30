@@ -6,7 +6,7 @@ import Header from './Dashboard/Header'
 import List from './Dashboard/List';
 import {data} from './Data/data'
 import Route from './Routing/Route';
-
+import SignUp from './Login Page/SignUp'
 
 const App = ()=>{
 
@@ -18,7 +18,11 @@ const App = ()=>{
             <Route path= "/">
                 <Login /> 
             </Route>
-
+            
+            <Route path= "/signup">
+                <SignUp /> 
+            </Route>
+            
             <Route path = "/dashboard">
                 <div>
                     <Header/>
