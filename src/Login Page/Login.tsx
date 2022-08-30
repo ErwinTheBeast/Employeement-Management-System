@@ -9,6 +9,9 @@ const Login = () => {
     const [pwderrMsg, setPwderrMsg] = useState('');
     const [href, setHref] = useState('/')
     
+    const newUser = (event) =>
+        setHref("/signup")
+
     const Validate = (event) => {
         let isValiduser = false;
         let isValidpwd = false;
@@ -108,11 +111,25 @@ const Login = () => {
                          Login
                         </button>
                     </Link>
+                    <br/>
+                    <p/>
+                    <Link href = {href}>
+                    <button
+                     className = "muted-button"
+                     onClick={
+                        e => {
+                            e.preventDefault()
+                            newUser(e)
+                            console.log(href)}}
+                        >
+                        New here? SignUp!
+                    </button>
+                    </Link>
                 </div>
 
                 </form>
             </div>
-            </div>
+        </div>
         );
 }
 
